@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: Sabs' Mathematics Notes
+
+nav:
+  - Home: index.md
+  - MAT102: mat102/index.md
+  - CSC236: csc236/index.md
