@@ -1,1 +1,1 @@
-- [Surjections] (Surjections/index.md)
+- [Surjections](Surjections/index.md)
