@@ -73,7 +73,108 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Content</p></div>
+<p>Those of you who are taking MAT102 currently or in the future may be struggling with how to prove a function is surjective. I've made this guide in an effort to hopefully reduce that anxiety and help you actually understand the concept of a surjective function.</p>
+<p>\bigskip</p>
+<p>The <strong>definition</strong> of <strong>surjectivity</strong> is:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\text{If we have a function } f: A \to B, \text{ then } B \subseteq f(A).
+</div>
+<script type="math/tex; mode=display">
+\text{If we have a function } f: A \to B, \text{ then } B \subseteq f(A).
+</script>
+</div>
+<p>By the <strong>definition</strong> of what it means to be a <strong>subset</strong>, this means that <strong>every</strong> element of <strong>B</strong> is an <strong>element</strong> of <strong>f(A)</strong>.</p>
+<p>Using <strong>quantifiers</strong>, this can be written as:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\forall z \, (z \in B \implies z \in f(A)).
+</div>
+<script type="math/tex; mode=display">
+\forall z \, (z \in B \implies z \in f(A)).
+</script>
+</div>
+<p>More rigorously, surjectivity means:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\forall y \in B, \, \exists x \in A \text{ such that } f(x) = y.
+</div>
+<script type="math/tex; mode=display">
+\forall y \in B, \, \exists x \in A \text{ such that } f(x) = y.
+</script>
+</div>
+<p>\bigskip</p>
+<p>The most common way to prove this is to use the following proof structure:</p>
+<ol>
+<li>Let <span class="arithmatex"><span class="MathJax_Preview">y \in B</span><script type="math/tex">y \in B</script></span>.</li>
+<li>Let <span class="arithmatex"><span class="MathJax_Preview">x =</span><script type="math/tex">x =</script></span> an expression in terms of <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">x \in A</span><script type="math/tex">x \in A</script></span> (so that <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is a valid input for <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>), and show that <span class="arithmatex"><span class="MathJax_Preview">f(x) = y</span><script type="math/tex">f(x) = y</script></span> when plugged in. In most cases, a good choice is setting <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> to the "inverse" of the function.</li>
+</ol>
+<p>\bigskip</p>
+<p>These steps may be confusing to understand, so here's a simple example:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\text{Let } f: \mathbb{R} \to [0, \infty), \quad f(x) = x^2. \text{ Prove that } f \text{ is surjective.}
+</div>
+<script type="math/tex; mode=display">
+\text{Let } f: \mathbb{R} \to [0, \infty), \quad f(x) = x^2. \text{ Prove that } f \text{ is surjective.}
+</script>
+</div>
+<p><strong>Proof:</strong></p>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">y \in [0, \infty)</span><script type="math/tex">y \in [0, \infty)</script></span>.</p>
+<p>Since <span class="arithmatex"><span class="MathJax_Preview">y \geq 0</span><script type="math/tex">y \geq 0</script></span>, we know that <span class="arithmatex"><span class="MathJax_Preview">\sqrt{y} \in \mathbb{R}</span><script type="math/tex">\sqrt{y} \in \mathbb{R}</script></span> (no undefined/imaginary value in the domain/input of <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>), so let <span class="arithmatex"><span class="MathJax_Preview">x = \sqrt{y}</span><script type="math/tex">x = \sqrt{y}</script></span>.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+f(x) = (\sqrt{y})^2 = y.
+</div>
+<script type="math/tex; mode=display">
+f(x) = (\sqrt{y})^2 = y.
+</script>
+</div>
+<p>Thus, for <strong>all</strong> <span class="arithmatex"><span class="MathJax_Preview">y \in [0, \infty)</span><script type="math/tex">y \in [0, \infty)</script></span>, there <strong>exists</strong> <span class="arithmatex"><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">f(x) = y</span><script type="math/tex">f(x) = y</script></span>.</p>
+<p>Therefore, <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is surjective. QED.</p>
+<p>\bigskip</p>
+<p>To <strong>disprove</strong> surjectivity, it is enough to show that there <strong>exists</strong> an element of <strong>B</strong> that is <strong>not</strong> in the image of <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>. In quantifiers, this is the <strong>negation</strong> of the above statement:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\neg \left( \forall y \in B, \, \exists x \in A \text{ such that } f(x) = y \right).
+</div>
+<script type="math/tex; mode=display">
+\neg \left( \forall y \in B, \, \exists x \in A \text{ such that } f(x) = y \right).
+</script>
+</div>
+<p>Which is equivalent to:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\exists y \in B \text{ such that } \forall x \in A, \, f(x) \neq y.
+</div>
+<script type="math/tex; mode=display">
+\exists y \in B \text{ such that } \forall x \in A, \, f(x) \neq y.
+</script>
+</div>
+<p>If you can <strong>prove</strong> this, then <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is <strong>not</strong> surjective.</p>
+<p>\bigskip</p>
+<p>Intuitively, this means: pick a value in the <strong>codomain</strong> that the function <strong>never</strong> outputs.</p>
+<p>\bigskip</p>
+<p>To make things clearer, here's a simple example:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\text{Let } f: \mathbb{Z} \to \mathbb{Z}, \quad f(x) = 2x. \text{ Prove that } f \text{ is not surjective.}
+</div>
+<script type="math/tex; mode=display">
+\text{Let } f: \mathbb{Z} \to \mathbb{Z}, \quad f(x) = 2x. \text{ Prove that } f \text{ is not surjective.}
+</script>
+</div>
+<p><strong>Proof:</strong></p>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">y = 1</span><script type="math/tex">y = 1</script></span> so that <span class="arithmatex"><span class="MathJax_Preview">y \in \mathbb{Z}</span><script type="math/tex">y \in \mathbb{Z}</script></span>.</p>
+<p>For <strong>any</strong> <span class="arithmatex"><span class="MathJax_Preview">x \in \mathbb{Z}</span><script type="math/tex">x \in \mathbb{Z}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">f(x) = 2x</span><script type="math/tex">f(x) = 2x</script></span> is always <strong>even</strong>, so there is <strong>no</strong> <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">f(x) = 1 = y</span><script type="math/tex">f(x) = 1 = y</script></span>, since <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> is <strong>odd</strong>.</p>
+<p>Thus, there <strong>exists</strong> <span class="arithmatex"><span class="MathJax_Preview">y \in \mathbb{Z}</span><script type="math/tex">y \in \mathbb{Z}</script></span> such that for <strong>all</strong> <span class="arithmatex"><span class="MathJax_Preview">x \in \mathbb{Z}</span><script type="math/tex">x \in \mathbb{Z}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">f(x) \neq y</span><script type="math/tex">f(x) \neq y</script></span>.</p>
+<p>Therefore, <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is <strong>not</strong> surjective. QED.</p>
+<p>\bigskip</p>
+<p><strong>Note:</strong> You may realize that <span class="arithmatex"><span class="MathJax_Preview">f(A) = \{ f(x) \mid x \in A \}</span><script type="math/tex">f(A) = \{ f(x) \mid x \in A \}</script></span> is just the image (range) of the function by definition, so another way to define surjectivity is to say <span class="arithmatex"><span class="MathJax_Preview">f(A) = B</span><script type="math/tex">f(A) = B</script></span>. Since <span class="arithmatex"><span class="MathJax_Preview">B \subseteq f(A)</span><script type="math/tex">B \subseteq f(A)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">f(A) \subseteq B</span><script type="math/tex">f(A) \subseteq B</script></span>, but because the image is always a subset of the codomain of a function, <span class="arithmatex"><span class="MathJax_Preview">f(A) \subseteq B</span><script type="math/tex">f(A) \subseteq B</script></span> is trivial, so we really only need to prove <span class="arithmatex"><span class="MathJax_Preview">B \subseteq f(A)</span><script type="math/tex">B \subseteq f(A)</script></span>.</p>
+<p>\bigskip</p>
+<p>This is just a general approach, and not every question will be solvable by this exact approach. A single algorithm does not exist that works for all surjectivity proofs. Sometimes you will have to use your head more and work with the existing definitions you have.</p>
+<p>\bigskip</p>
+<p>As a wise man once said, "Definition. Definition is always your friend."</p></div>
             </div>
         </div>
 
