@@ -73,60 +73,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Those of you who are taking MAT102 currently or in the future may be struggling with how to prove a function is surjective. I've made this guide in an effort to hopefully reduce that anxiety and help you actually understand the concept of a surjective function.</p>
-<p>The <strong>definition</strong> of <strong>surjectivity</strong> is:</p>
-<div class="arithmatex">\[
-\text{If we have a function } f: A \to B, \text{ then } B \subseteq f(A).
-\]</div>
-<p>By the <strong>definition</strong> of what it means to be a <strong>subset</strong>, this means that <strong>every</strong> element of <strong>B</strong> is an <strong>element</strong> of <strong>f(A)</strong>.</p>
-<p>Using <strong>quantifiers</strong>, this can be written as:</p>
-<div class="arithmatex">\[
-\forall z \, (z \in B \implies z \in f(A)).
-\]</div>
-<p>More rigorously, surjectivity means:</p>
-<div class="arithmatex">\[
-\forall y \in B, \, \exists x \in A \text{ such that } f(x) = y.
-\]</div>
-<p>The most common way to prove this is to use the following proof structure:</p>
-<ol>
-<li>Let <span class="arithmatex">\(y \in B\)</span>.</li>
-<li>Let <span class="arithmatex">\(x =\)</span> "an expression in terms of <span class="arithmatex">\(y\)</span>" such that <span class="arithmatex">\(x \in A\)</span> (so that <span class="arithmatex">\(x\)</span> is a valid input for <span class="arithmatex">\(f\)</span>). In most cases, a good choice is setting <span class="arithmatex">\(x\)</span> to the "inverse" of the function.</li>
-<li>Show that <span class="arithmatex">\(f(x) = y\)</span> when plugged in. </li>
-</ol>
-<p>These steps may be confusing to understand, so here's a simple example:</p>
-<div class="arithmatex">\[
-\text{Let } f: \mathbb{R} \to [0, \infty), \quad f(x) = x^2. \text{ Prove that } f \text{ is surjective.}
-\]</div>
-<p><strong>Proof:</strong></p>
-<p>Let <span class="arithmatex">\(y \in [0, \infty)\)</span>.</p>
-<p>Since <span class="arithmatex">\(y \geq 0\)</span>, we know that <span class="arithmatex">\(\sqrt{y} \in \mathbb{R}\)</span> (no undefined/imaginary value in the domain/input of <span class="arithmatex">\(f\)</span>), so let <span class="arithmatex">\(x = \sqrt{y}\)</span>.</p>
-<div class="arithmatex">\[
-f(x) = (\sqrt{y})^2 = y.
-\]</div>
-<p>Thus, for <strong>all</strong> <span class="arithmatex">\(y \in [0, \infty)\)</span>, there <strong>exists</strong> <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that <span class="arithmatex">\(f(x) = y\)</span>.</p>
-<p>Therefore, <span class="arithmatex">\(f\)</span> is surjective. QED.</p>
-<p>To <strong>disprove</strong> surjectivity, it is enough to show that there <strong>exists</strong> an element of <strong>B</strong> that is <strong>not</strong> in the image of <span class="arithmatex">\(f\)</span>. In quantifiers, this is the <strong>negation</strong> of the above statement:</p>
-<div class="arithmatex">\[
-\neg \left( \forall y \in B, \, \exists x \in A \text{ such that } f(x) = y \right).
-\]</div>
-<p>Which is equivalent to:</p>
-<div class="arithmatex">\[
-\exists y \in B \text{ such that } \forall x \in A, \, f(x) \neq y.
-\]</div>
-<p>If you can <strong>prove</strong> this, then <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective.</p>
-<p>Intuitively, this means: pick a value in the <strong>codomain</strong> that the function <strong>never</strong> outputs.</p>
-<p>To make things clearer, here's a simple example:</p>
-<div class="arithmatex">\[
-\text{Let } f: \mathbb{Z} \to \mathbb{Z}, \quad f(x) = 2x. \text{ Prove that } f \text{ is not surjective.}
-\]</div>
-<p><strong>Proof:</strong></p>
-<p>Let <span class="arithmatex">\(y = 1\)</span> so that <span class="arithmatex">\(y \in \mathbb{Z}\)</span>.</p>
-<p>For <strong>any</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>, <span class="arithmatex">\(f(x) = 2x\)</span> is always <strong>even</strong>, so there is <strong>no</strong> <span class="arithmatex">\(x\)</span> such that <span class="arithmatex">\(f(x) = 1 = y\)</span>, since <span class="arithmatex">\(1\)</span> is <strong>odd</strong>.</p>
-<p>Thus, there <strong>exists</strong> <span class="arithmatex">\(y \in \mathbb{Z}\)</span> such that for <strong>all</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>, <span class="arithmatex">\(f(x) \neq y\)</span>.</p>
-<p>Therefore, <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective. QED.</p>
-<p><strong>Note:</strong> You may realize that <span class="arithmatex">\(f(A) = \{ f(x) \mid x \in A \}\)</span> is just the image (range) of the function by definition, so another way to define surjectivity is to say <span class="arithmatex">\(f(A) = B\)</span>. Since <span class="arithmatex">\(B \subseteq f(A)\)</span> and <span class="arithmatex">\(f(A) \subseteq B\)</span>, but because the image is always a subset of the codomain of a function, <span class="arithmatex">\(f(A) \subseteq B\)</span> is trivial, so we really only need to prove <span class="arithmatex">\(B \subseteq f(A)\)</span>.</p>
-<p>This is just a general approach, and not every question will be solvable by this exact method, but it works for most cases. Regardless, a single algorithm does not exist that works for <strong>all</strong> surjectivity proofs. Sometimes you will have to use your head more and work with the existing definitions you have.</p>
-<p>As a wise man once said, "Definition. Definition is always your friend."</p></div>
+</div>
             </div>
         </div>
 
