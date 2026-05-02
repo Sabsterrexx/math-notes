@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Index - Sabs' Mathematics Notes</title>
+        <title>How to do an Image/Range Proof - Sabs' Mathematics Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -68,12 +68,322 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-to-do-an-imagerange-proof" class="nav-link">How to do an Image/Range Proof</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#review" class="nav-link">Review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#example" class="nav-link">Example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#proof-strategies" class="nav-link">Proof Strategies</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-show-fa-subseteq-c" class="nav-link">Step 1: Show \(f(A) \subseteq C\)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-show-c-subseteq-fa" class="nav-link">Step 2: Show \(C \subseteq f(A)\)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#example-1" class="nav-link">Example 1</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#claim" class="nav-link">Claim</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#proof" class="nav-link">Proof</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#example-2" class="nav-link">Example 2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#claim_1" class="nav-link">Claim</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#proof_1" class="nav-link">Proof</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#final-note" class="nav-link">Final Note</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="how-to-do-an-imagerange-proof">How to do an Image/Range Proof</h1>
+<h2 id="review">Review</h2>
+<p>If we have a function denoted as <span class="arithmatex">\(f\)</span>, defined as <span class="arithmatex">\(f: D \to C\)</span>, then <span class="arithmatex">\(D\)</span> is the domain, and <span class="arithmatex">\(C\)</span> is the codomain. The image of the function is</p>
+<div class="arithmatex">\[
+f(D) = \{f(x) \mid x \in D\}
+\]</div>
+<p>(the set of all outputs of the function for every input in the domain).</p>
+<h2 id="example">Example</h2>
+<p>If we have a function:</p>
+<div class="arithmatex">\[
+f: \{-2, -1, 0, 1, 2\} \to \{0, 1, 2, 3, 4, 5\}, \quad f(x) = x^2
+\]</div>
+<p>We describe the domain and the codomain as the following sets:</p>
+<p>Domain (<span class="arithmatex">\(D\)</span>):</p>
+<div class="arithmatex">\[
+\{-2, -1, 0, 1, 2\}
+\]</div>
+<p>Codomain:</p>
+<div class="arithmatex">\[
+\{0, 1, 2, 3, 4, 5\}
+\]</div>
+<p>The range (or image) of the function is:</p>
+<div class="arithmatex">\[
+f(D) = \{ f(x) \mid x \in D \}
+\]</div>
+<p>Since</p>
+<div class="arithmatex">\[
+D = \{-2, -1, 0, 1, 2\},
+\]</div>
+<p>we can evaluate:</p>
+<div class="arithmatex">\[
+f(\{-2, -1, 0, 1, 2\})
+=
+\{ f(x) \mid x \in \{-2, -1, 0, 1, 2\} \}
+\]</div>
+<div class="arithmatex">\[
+=
+\{ x^2 \mid x \in \{-2, -1, 0, 1, 2\} \}
+\]</div>
+<div class="arithmatex">\[
+=
+\{(-2)^2, (-1)^2, 0^2, 1^2, 2^2\}
+\]</div>
+<div class="arithmatex">\[
+=
+\{4, 1, 0\}
+\]</div>
+<p><strong>Note:</strong> "range" and "image" mean the same thing. You should also notice with this example that even though the image is a subset of the codomain, it may not always be equal to it.</p>
+<hr />
+<h1 id="proof-strategies">Proof Strategies</h1>
+<p>Suppose we have a function</p>
+<div class="arithmatex">\[
+f: A \to B
+\]</div>
+<p>and we want to prove its range (or image) is <span class="arithmatex">\(C\)</span> (with <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(C\)</span> being arbitrary sets). Essentially, we want to show:</p>
+<div class="arithmatex">\[
+f(A) = C
+\]</div>
+<p>To prove two sets are equal, we need double subset inclusion, i.e., prove both:</p>
+<div class="arithmatex">\[
+f(A) \subseteq C
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+C \subseteq f(A).
+\]</div>
+<h2 id="step-1-show-fa-subseteq-c">Step 1: Show <span class="arithmatex">\(f(A) \subseteq C\)</span></h2>
+<p>This means:</p>
+<div class="arithmatex">\[
+\forall y, \quad y \in f(A) \implies y \in C
+\]</div>
+<p>Usually, this is just a simple inequality check or "definition unwinding" if <span class="arithmatex">\(C\)</span> is an interval of real numbers.</p>
+<h2 id="step-2-show-c-subseteq-fa">Step 2: Show <span class="arithmatex">\(C \subseteq f(A)\)</span></h2>
+<p>This means:</p>
+<div class="arithmatex">\[
+\forall y, \quad y \in C \implies y \in f(A)
+\]</div>
+<p>Or equivalently:</p>
+<div class="arithmatex">\[
+\forall y \in C, \exists x \in A \text{ such that } f(x) = y
+\]</div>
+<h3 id="two-main-approaches">Two main approaches</h3>
+<h3 id="approach-a-for-intervals-of-real-numbers">Approach A (for intervals of real numbers)</h3>
+<ol>
+<li>Pick <span class="arithmatex">\(y \in C\)</span></li>
+<li>Set <span class="arithmatex">\(x\)</span> to be the “inverse” of <span class="arithmatex">\(f\)</span> in terms of <span class="arithmatex">\(y\)</span></li>
+<li>Show <span class="arithmatex">\(x \in A\)</span></li>
+<li>Plug <span class="arithmatex">\(x\)</span> into <span class="arithmatex">\(f\)</span> and show <span class="arithmatex">\(f(x) = y\)</span></li>
+</ol>
+<h3 id="approach-b-for-more-abstract-or-multi-variable-functions-like-fxy">Approach B (for more abstract or multi-variable functions like <span class="arithmatex">\(f(x,y)\)</span>)</h3>
+<ol>
+<li>Pick <span class="arithmatex">\(z \in C\)</span></li>
+<li>Choose <span class="arithmatex">\(x,y\)</span> in terms of <span class="arithmatex">\(z\)</span> (sometimes you may need to resort to “fixing” one of the variables to a constant)</li>
+<li>Show <span class="arithmatex">\(f(x,y) = z\)</span> by plugging in and evaluating the function with these new values</li>
+</ol>
+<p>Essentially, Step 2 is about explicitly constructing a pre-image for every element in <span class="arithmatex">\(C\)</span>.</p>
+<hr />
+<h1 id="example-1">Example 1</h1>
+<h2 id="claim">Claim</h2>
+<p>Let</p>
+<div class="arithmatex">\[
+f: \mathbb{R} \to \mathbb{R}
+\]</div>
+<p>be defined by</p>
+<div class="arithmatex">\[
+f(x) = x^3.
+\]</div>
+<p>Then the image of <span class="arithmatex">\(f\)</span> is <span class="arithmatex">\(\mathbb{R}\)</span>.</p>
+<p>Meaning,</p>
+<div class="arithmatex">\[
+f(\mathbb{R}) = \mathbb{R}.
+\]</div>
+<h2 id="proof">Proof</h2>
+<h3 id="step-1-show-fmathbbr-subseteq-mathbbr">Step 1: Show <span class="arithmatex">\(f(\mathbb{R}) \subseteq \mathbb{R}\)</span></h3>
+<p>Let <span class="arithmatex">\(y \in f(\mathbb{R})\)</span>.</p>
+<p>Then by definition of image, there exists <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that</p>
+<div class="arithmatex">\[
+y = f(x) = x^3.
+\]</div>
+<p>Since <span class="arithmatex">\(x \in \mathbb{R}\)</span>, we have <span class="arithmatex">\(x^3 \in \mathbb{R}\)</span>.</p>
+<p>Thus,</p>
+<div class="arithmatex">\[
+y \in \mathbb{R}.
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+f(\mathbb{R}) \subseteq \mathbb{R}.
+\]</div>
+<h3 id="step-2-show-mathbbr-subseteq-fmathbbr-approach-a">Step 2: Show <span class="arithmatex">\(\mathbb{R} \subseteq f(\mathbb{R})\)</span> (Approach A)</h3>
+<p>Let <span class="arithmatex">\(y \in \mathbb{R}\)</span>.</p>
+<p>We must show that there exists <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that</p>
+<div class="arithmatex">\[
+f(x) = y.
+\]</div>
+<p>Since</p>
+<div class="arithmatex">\[
+f(x) = x^3,
+\]</div>
+<p>solve for <span class="arithmatex">\(x\)</span> in terms of <span class="arithmatex">\(y\)</span>:</p>
+<div class="arithmatex">\[
+x = \sqrt[3]{y}.
+\]</div>
+<p>Since <span class="arithmatex">\(y \in \mathbb{R}\)</span>, we have</p>
+<div class="arithmatex">\[
+\sqrt[3]{y} \in \mathbb{R}.
+\]</div>
+<p>Thus,</p>
+<div class="arithmatex">\[
+x \in \mathbb{R}.
+\]</div>
+<p>Now compute:</p>
+<div class="arithmatex">\[
+f(x)
+=
+f(\sqrt[3]{y})
+=
+(\sqrt[3]{y})^3
+=
+y.
+\]</div>
+<p>Thus, for every <span class="arithmatex">\(y \in \mathbb{R}\)</span>, there exists <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that</p>
+<div class="arithmatex">\[
+f(x) = y.
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+\mathbb{R} \subseteq f(\mathbb{R}).
+\]</div>
+<p>Since both inclusions hold, we conclude:</p>
+<div class="arithmatex">\[
+f(\mathbb{R}) = \mathbb{R}.
+\]</div>
+<hr />
+<h1 id="example-2">Example 2</h1>
+<h2 id="claim_1">Claim</h2>
+<p>Let</p>
+<div class="arithmatex">\[
+f: \mathbb{R}^2 \to \mathbb{R}
+\]</div>
+<p>be defined by</p>
+<div class="arithmatex">\[
+f(x,y) = x + y.
+\]</div>
+<p>Then the image of <span class="arithmatex">\(f\)</span> is <span class="arithmatex">\(\mathbb{R}\)</span>.</p>
+<p>That is,</p>
+<div class="arithmatex">\[
+f(\mathbb{R}^2) = \mathbb{R}.
+\]</div>
+<h2 id="proof_1">Proof</h2>
+<h3 id="step-1-show-fmathbbr2-subseteq-mathbbr">Step 1: Show <span class="arithmatex">\(f(\mathbb{R}^2) \subseteq \mathbb{R}\)</span></h3>
+<p>Let</p>
+<div class="arithmatex">\[
+z \in f(\mathbb{R}^2).
+\]</div>
+<p>Then there exists <span class="arithmatex">\((x,y) \in \mathbb{R}^2\)</span> such that</p>
+<div class="arithmatex">\[
+z = f(x,y) = x + y.
+\]</div>
+<p>Since <span class="arithmatex">\(x,y \in \mathbb{R}\)</span>, it follows that</p>
+<div class="arithmatex">\[
+x+y \in \mathbb{R}.
+\]</div>
+<p>Thus,</p>
+<div class="arithmatex">\[
+z \in \mathbb{R}.
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+f(\mathbb{R}^2) \subseteq \mathbb{R}.
+\]</div>
+<h3 id="step-2-show-mathbbr-subseteq-fmathbbr2-approach-b">Step 2: Show <span class="arithmatex">\(\mathbb{R} \subseteq f(\mathbb{R}^2)\)</span> (Approach B)</h3>
+<p>Let</p>
+<div class="arithmatex">\[
+z \in \mathbb{R}.
+\]</div>
+<p>We must show that there exists <span class="arithmatex">\((x,y) \in \mathbb{R}^2\)</span> such that</p>
+<div class="arithmatex">\[
+f(x,y) = z.
+\]</div>
+<p>Construct a pre-image as follows:</p>
+<p>Let</p>
+<div class="arithmatex">\[
+x = z
+\]</div>
+<p>and let</p>
+<div class="arithmatex">\[
+y = 0.
+\]</div>
+<p>Then</p>
+<div class="arithmatex">\[
+(x,y) = (z,0) \in \mathbb{R}^2
+\]</div>
+<p>since <span class="arithmatex">\(z \in \mathbb{R}\)</span> and <span class="arithmatex">\(0 \in \mathbb{R}\)</span>.</p>
+<p>Now compute:</p>
+<div class="arithmatex">\[
+f(z,0) = z + 0 = z.
+\]</div>
+<p>Thus, for every <span class="arithmatex">\(z \in \mathbb{R}\)</span>, we have constructed an element of <span class="arithmatex">\(\mathbb{R}^2\)</span> that maps to it, meaning:</p>
+<div class="arithmatex">\[
+\forall z \in \mathbb{R}, \exists (x,y) \in \mathbb{R}^2 \text{ such that } f(x,y) = z.
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+\mathbb{R} \subseteq f(\mathbb{R}^2).
+\]</div>
+<p>Since both inclusions hold, we conclude:</p>
+<div class="arithmatex">\[
+f(\mathbb{R}^2) = \mathbb{R}.
+\]</div>
+<hr />
+<h2 id="final-note">Final Note</h2>
+<p>There are certainly more strange image-proof questions you will have to do in this course (I am certain your professors are capable of making a few), but I've tried to cover the most general use-cases in this guide.</p>
+<p>However, ultimately, keep in mind that mathematics is not a spectator sport. Do more proofs, ask your instructors for feedback if you have that luxury, and find other people to cross-check your work with.</p>
+<p>Reading these notes and never doing the practice is like watching a 3Blue1Brown video and expecting to become an expert on some mathematics topic. You may come to appreciate the subject more, but you will be far from mastering it without rigorous study.</p>
+<p>As always, feedback and suggestions in the comments are welcome. I have been busy with university work, so I had this post for a while in my drafts and did not get around to finishing it until now.</p></div>
             </div>
         </div>
 
