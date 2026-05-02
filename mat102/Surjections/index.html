@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Index - Sabs' Mathematics Notes</title>
+        <title>How to Prove a Function is Surjective - Sabs' Mathematics Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -68,12 +68,68 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-to-prove-a-function-is-surjective" class="nav-link">How to Prove a Function is Surjective</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#definition-of-surjectivity" class="nav-link">Definition of Surjectivity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#general-proof-structure" class="nav-link">General Proof Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#example-of-a-surjectivity-proof" class="nav-link">Example of a Surjectivity Proof</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#proof" class="nav-link">Proof</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-to-disprove-surjectivity" class="nav-link">How to Disprove Surjectivity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#intuition" class="nav-link">Intuition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#example-of-a-non-surjective-function" class="nav-link">Example of a Non-Surjective Function</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#proof_1" class="nav-link">Proof</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#important-note-about-the-image-of-a-function" class="nav-link">Important Note About the Image of a Function</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#final-thoughts" class="nav-link">Final Thoughts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h1 id="how-to-prove-a-function-is-surjective">How to Prove a Function is Surjective</h1>
 <p>Those of you who are taking MAT102 currently or in the future may be struggling with how to prove a function is surjective. I've made this guide in an effort to hopefully reduce that anxiety and help you actually understand the concept of a surjective function.</p>
+<hr />
+<h1 id="definition-of-surjectivity">Definition of Surjectivity</h1>
 <p>The <strong>definition</strong> of <strong>surjectivity</strong> is:</p>
 <div class="arithmatex">\[
 \text{If we have a function } f: A \to B, \text{ then } B \subseteq f(A).
@@ -87,25 +143,51 @@
 <div class="arithmatex">\[
 \forall y \in B, \, \exists x \in A \text{ such that } f(x) = y.
 \]</div>
-<p>The most common way to prove this is to use the following proof structure:</p>
+<hr />
+<h1 id="general-proof-structure">General Proof Structure</h1>
+<p>The most common way to prove surjectivity is to use the following proof structure:</p>
 <ol>
 <li>Let <span class="arithmatex">\(y \in B\)</span>.</li>
 <li>Let <span class="arithmatex">\(x =\)</span> "an expression in terms of <span class="arithmatex">\(y\)</span>" such that <span class="arithmatex">\(x \in A\)</span> (so that <span class="arithmatex">\(x\)</span> is a valid input for <span class="arithmatex">\(f\)</span>). In most cases, a good choice is setting <span class="arithmatex">\(x\)</span> to the "inverse" of the function.</li>
-<li>Show that <span class="arithmatex">\(f(x) = y\)</span> when plugged in. </li>
+<li>Show that <span class="arithmatex">\(f(x) = y\)</span> when plugged in.</li>
 </ol>
-<p>These steps may be confusing to understand, so here's a simple example:</p>
+<hr />
+<h1 id="example-of-a-surjectivity-proof">Example of a Surjectivity Proof</h1>
+<p>Consider the function:</p>
 <div class="arithmatex">\[
-\text{Let } f: \mathbb{R} \to [0, \infty), \quad f(x) = x^2. \text{ Prove that } f \text{ is surjective.}
+\text{Let } f: \mathbb{R} \to [0, \infty), \quad f(x) = x^2.
 \]</div>
-<p><strong>Proof:</strong></p>
-<p>Let <span class="arithmatex">\(y \in [0, \infty)\)</span>.</p>
-<p>Since <span class="arithmatex">\(y \geq 0\)</span>, we know that <span class="arithmatex">\(\sqrt{y} \in \mathbb{R}\)</span> (no undefined/imaginary value in the domain/input of <span class="arithmatex">\(f\)</span>), so let <span class="arithmatex">\(x = \sqrt{y}\)</span>.</p>
+<p>We will prove that <span class="arithmatex">\(f\)</span> is surjective.</p>
+<h2 id="proof">Proof</h2>
+<p>Let</p>
+<div class="arithmatex">\[
+y \in [0, \infty).
+\]</div>
+<p>Since</p>
+<div class="arithmatex">\[
+y \geq 0,
+\]</div>
+<p>we know that</p>
+<div class="arithmatex">\[
+\sqrt{y} \in \mathbb{R}
+\]</div>
+<p>(no undefined or imaginary value in the domain/input of <span class="arithmatex">\(f\)</span>), so let</p>
+<div class="arithmatex">\[
+x = \sqrt{y}.
+\]</div>
+<p>Now compute:</p>
 <div class="arithmatex">\[
 f(x) = (\sqrt{y})^2 = y.
 \]</div>
-<p>Thus, for <strong>all</strong> <span class="arithmatex">\(y \in [0, \infty)\)</span>, there <strong>exists</strong> <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that <span class="arithmatex">\(f(x) = y\)</span>.</p>
+<p>Thus, for <strong>all</strong> <span class="arithmatex">\(y \in [0, \infty)\)</span>, there <strong>exists</strong> <span class="arithmatex">\(x \in \mathbb{R}\)</span> such that</p>
+<div class="arithmatex">\[
+f(x) = y.
+\]</div>
 <p>Therefore, <span class="arithmatex">\(f\)</span> is surjective. QED.</p>
-<p>To <strong>disprove</strong> surjectivity, it is enough to show that there <strong>exists</strong> an element of <strong>B</strong> that is <strong>not</strong> in the image of <span class="arithmatex">\(f\)</span>. In quantifiers, this is the <strong>negation</strong> of the above statement:</p>
+<hr />
+<h1 id="how-to-disprove-surjectivity">How to Disprove Surjectivity</h1>
+<p>To <strong>disprove</strong> surjectivity, it is enough to show that there <strong>exists</strong> an element of <strong>B</strong> that is <strong>not</strong> in the image of <span class="arithmatex">\(f\)</span>.</p>
+<p>In quantifiers, this is the <strong>negation</strong> of the surjectivity statement:</p>
 <div class="arithmatex">\[
 \neg \left( \forall y \in B, \, \exists x \in A \text{ such that } f(x) = y \right).
 \]</div>
@@ -113,20 +195,79 @@ f(x) = (\sqrt{y})^2 = y.
 <div class="arithmatex">\[
 \exists y \in B \text{ such that } \forall x \in A, \, f(x) \neq y.
 \]</div>
-<p>If you can <strong>prove</strong> this, then <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective.</p>
-<p>Intuitively, this means: pick a value in the <strong>codomain</strong> that the function <strong>never</strong> outputs.</p>
-<p>To make things clearer, here's a simple example:</p>
+<p>If you can prove this, then <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective.</p>
+<hr />
+<h1 id="intuition">Intuition</h1>
+<p>Intuitively, disproving surjectivity means:</p>
+<blockquote>
+<p>Pick a value in the <strong>codomain</strong> that the function <strong>never</strong> outputs.</p>
+</blockquote>
+<hr />
+<h1 id="example-of-a-non-surjective-function">Example of a Non-Surjective Function</h1>
+<p>Consider the function:</p>
 <div class="arithmatex">\[
-\text{Let } f: \mathbb{Z} \to \mathbb{Z}, \quad f(x) = 2x. \text{ Prove that } f \text{ is not surjective.}
+\text{Let } f: \mathbb{Z} \to \mathbb{Z}, \quad f(x) = 2x.
 \]</div>
-<p><strong>Proof:</strong></p>
-<p>Let <span class="arithmatex">\(y = 1\)</span> so that <span class="arithmatex">\(y \in \mathbb{Z}\)</span>.</p>
-<p>For <strong>any</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>, <span class="arithmatex">\(f(x) = 2x\)</span> is always <strong>even</strong>, so there is <strong>no</strong> <span class="arithmatex">\(x\)</span> such that <span class="arithmatex">\(f(x) = 1 = y\)</span>, since <span class="arithmatex">\(1\)</span> is <strong>odd</strong>.</p>
-<p>Thus, there <strong>exists</strong> <span class="arithmatex">\(y \in \mathbb{Z}\)</span> such that for <strong>all</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>, <span class="arithmatex">\(f(x) \neq y\)</span>.</p>
+<p>We will prove that <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective.</p>
+<h2 id="proof_1">Proof</h2>
+<p>Let</p>
+<div class="arithmatex">\[
+y = 1
+\]</div>
+<p>so that</p>
+<div class="arithmatex">\[
+y \in \mathbb{Z}.
+\]</div>
+<p>For <strong>any</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>,</p>
+<div class="arithmatex">\[
+f(x) = 2x
+\]</div>
+<p>is always <strong>even</strong>, so there is <strong>no</strong> <span class="arithmatex">\(x\)</span> such that</p>
+<div class="arithmatex">\[
+f(x) = 1 = y,
+\]</div>
+<p>since <span class="arithmatex">\(1\)</span> is <strong>odd</strong>.</p>
+<p>Thus, there <strong>exists</strong> <span class="arithmatex">\(y \in \mathbb{Z}\)</span> such that for <strong>all</strong> <span class="arithmatex">\(x \in \mathbb{Z}\)</span>,</p>
+<div class="arithmatex">\[
+f(x) \neq y.
+\]</div>
 <p>Therefore, <span class="arithmatex">\(f\)</span> is <strong>not</strong> surjective. QED.</p>
-<p><strong>Note:</strong> You may realize that <span class="arithmatex">\(f(A) = \{ f(x) \mid x \in A \}\)</span> is just the image (range) of the function by definition, so another way to define surjectivity is to say <span class="arithmatex">\(f(A) = B\)</span>. Since <span class="arithmatex">\(B \subseteq f(A)\)</span> and <span class="arithmatex">\(f(A) \subseteq B\)</span>, but because the image is always a subset of the codomain of a function, <span class="arithmatex">\(f(A) \subseteq B\)</span> is trivial, so we really only need to prove <span class="arithmatex">\(B \subseteq f(A)\)</span>.</p>
-<p>This is just a general approach, and not every question will be solvable by this exact method, but it works for most cases. Regardless, a single algorithm does not exist that works for <strong>all</strong> surjectivity proofs. Sometimes you will have to use your head more and work with the existing definitions you have.</p>
-<p>As a wise man once said, "Definition. Definition is always your friend."</p></div>
+<hr />
+<h1 id="important-note-about-the-image-of-a-function">Important Note About the Image of a Function</h1>
+<p>You may realize that</p>
+<div class="arithmatex">\[
+f(A) = \{ f(x) \mid x \in A \}
+\]</div>
+<p>is just the image (range) of the function by definition.</p>
+<p>So another way to define surjectivity is to say:</p>
+<div class="arithmatex">\[
+f(A) = B.
+\]</div>
+<p>Since</p>
+<div class="arithmatex">\[
+B \subseteq f(A)
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+f(A) \subseteq B,
+\]</div>
+<p>but because the image is always a subset of the codomain of a function,</p>
+<div class="arithmatex">\[
+f(A) \subseteq B
+\]</div>
+<p>is trivial.</p>
+<p>So we really only need to prove:</p>
+<div class="arithmatex">\[
+B \subseteq f(A).
+\]</div>
+<hr />
+<h1 id="final-thoughts">Final Thoughts</h1>
+<p>This is just a general approach, and not every question will be solvable by this exact method, but it works for most cases.</p>
+<p>Regardless, a single algorithm does not exist that works for <strong>all</strong> surjectivity proofs. Sometimes you will have to use your head more and work with the existing definitions you have.</p>
+<p>As a wise man once said:</p>
+<blockquote>
+<p>"Definition. Definition is always your friend."</p>
+</blockquote></div>
             </div>
         </div>
 
